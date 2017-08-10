@@ -30,7 +30,7 @@
 	1. General styles
 -------------------------------------------------------------------*/
 /* This line will import “Montserrat” font from google web fonts */
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /* This is the style for the body of the template, setting the font and the transition (Animation options)*/
 *,body{
