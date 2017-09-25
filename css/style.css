@@ -152,7 +152,7 @@
 -------------------------------------------------------------------*/
 #signup, .row2{
 	background-color:#FFFFFF;
-	min-height: 385px;
+	min-height: 100px;
 }
 
 /* Form style */
