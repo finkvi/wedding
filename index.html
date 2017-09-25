@@ -18,152 +18,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>Свадьба Ольги и Виктора</title>
 
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/easeljs-0.6.0.min.js"></script>
-<script src="js/tweenjs-0.4.0.min.js"></script>
-<script src="js/movieclip-0.6.0.min.js"></script>
-<script src="js/preloadjs-0.3.0.min.js"></script>
-<script src="js/rocketanimation.js"></script>
-<script src="js/unitegallery.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-
-<link rel="stylesheet" href="css/unite-gallery.css" type="text/css"/> 
-<script type="text/javascript" src="themes/default/ug-theme-default.js"></script> 
-<link rel="stylesheet" href="themes/default/ug-theme-default.css" type="text/css" /> 
-<script type="text/javascript" src="themes/compact/ug-theme-compact.js"></script> 
-
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<script>
-	"use strict";
-	var canvas, stage, exportRoot;
-
-	function init() {
-		canvas = document.getElementById("canvas");
-		images = images||{};
-
-		var manifest = [
-			{src:"img/cloud.png", id:"cloud"},
-			{src:"img/rocket.png", id:"rocket_1"}
-		];
-
-		var loader = new createjs.LoadQueue(false);
-		loader.addEventListener("fileload", handleFileLoad);
-		loader.addEventListener("complete", handleComplete);
-		loader.loadManifest(manifest);
-	}
-
-	function handleFileLoad(evt) {
-		if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
-	}
-
-	function handleComplete() {
-		exportRoot = new lib.rocket();
-
-		stage = new createjs.Stage(canvas);
-		stage.addChild(exportRoot);
-		stage.update();
-
-		createjs.Ticker.setFPS(30);
-		createjs.Ticker.addEventListener("tick", stage);
-	}
-
-	/*
-		function getTimeRemaining(endtime) {
-		  var t = Date.parse(endtime) - Date.parse(new Date());
-		  var seconds = Math.floor((t / 1000) % 60);
-		  var minutes = Math.floor((t / 1000 / 60) % 60);
-		  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-		  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-		  return {
-			'total': t,
-			'days': days,
-			'hours': hours,
-			'minutes': minutes,
-			'seconds': seconds
-		  };
-		}
-
-		function initializeClock(id, endtime) {
-		  var clock = document.getElementById(id);
-		  var daysSpan = clock.querySelector('.days');
-		  var hoursSpan = clock.querySelector('.hours');
-		  var minutesSpan = clock.querySelector('.minutes');
-		  var secondsSpan = clock.querySelector('.seconds');
-
-		  function updateClock() {
-			var t = getTimeRemaining(endtime);
-
-			daysSpan.innerHTML = t.days;
-			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-			if (t.total <= 0) {
-			  clearInterval(timeinterval);
-			}
-		  }
-
-		  updateClock();
-		  var timeinterval = setInterval(updateClock, 1000);
-		}
-
-		var deadline = new Date('09/02/17 15:00:00');
-		initializeClock('clockdiv', deadline);
-	*/
-</script>
-
-<script type="text/javascript"> 	
-				jQuery(document).ready(function(){
-					
-					jQuery("#gallery").unitegallery({
-						gallery_theme: "compact",
-							
-						//theme options
-						
-						theme_panel_position: "bottom",			//top, bottom, left, right - thumbs panel position
-						theme_hide_panel_under_width: 480,		//hide panel under certain browser width, if null, don't hide
-
-						// gallery options
-					
-						gallery_width:1200,							//gallery width		
-						gallery_height:700,							//gallery height
-		
-						//gallery_min_width: 400,						//gallery minimal width when resizing
-						//gallery_min_height: 300,					//gallery minimal height when resizing
-		
-						gallery_skin:"default",						//default, alexis etc... - the global skin of the gallery. Will change all gallery items by default.
-		
-						gallery_images_preload_type:"minimal",		//all , minimal , visible - preload type of the images.
-																	//minimal - only image nabours will be loaded each time.
-																	//visible - visible thumbs images will be loaded each time.
-																	//all - load all the images first time.
-		
-						gallery_autoplay:false,						//true / false - begin slideshow autoplay on start
-						gallery_play_interval: 3000,				//play interval of the slideshow
-						gallery_pause_on_mouseover: true,			//true,false - pause on mouseover when playing slideshow true/false
-		
-						gallery_control_thumbs_mousewheel:false,	//true,false - enable / disable the mousewheel
-						gallery_control_keyboard: true,				//true,false - enable / disble keyboard controls
-						gallery_carousel:true,						//true,false - next button on last image goes to first image.
-		
-						gallery_preserve_ratio: true,				//true, false - preserver ratio when on window resize
-						gallery_debug_errors:false,					//show error message when there is some error on the gallery area.
-						gallery_background_color: "",				//set custom background color. If not set it will be taken from css.
-						
-						slider_enable_fullscreen_button: true,
-						slider_scale_mode: "fit"
-					});
-				});		
-</script>
-
 </head>
 
 <body onload="init();">
@@ -219,6 +73,7 @@
 			<img alt='Image 7 Title' data-image='photo/DSC07673.jpg' data-description='Image 7 Description'src='thumb/DSC07673.png'>
 			<img alt='Image 8 Title' data-image='photo/DSC07676.jpg' data-description='Image 8 Description'src='thumb/DSC07676.png'>
 			<img alt='Image 9 Title' data-image='photo/DSC07678.jpg' data-description='Image 9 Description'src='thumb/DSC07678.png'>
+			
 			<img alt='Image 10 Title' data-image='photo/DSC07680.jpg' data-description='Image 10 Description'src='thumb/DSC07680.png'>
 			<img alt='Image 11 Title' data-image='photo/DSC07681.jpg' data-description='Image 11 Description'src='thumb/DSC07681.png'>
 			<img alt='Image 12 Title' data-image='photo/DSC07683.jpg' data-description='Image 12 Description'src='thumb/DSC07683.png'>
@@ -235,6 +90,8 @@
 			<img alt='Image 23 Title' data-image='photo/DSC07706.jpg' data-description='Image 23 Description'src='thumb/DSC07706.png'>
 			<img alt='Image 24 Title' data-image='photo/DSC07707.jpg' data-description='Image 24 Description'src='thumb/DSC07707.png'>
 			<img alt='Image 25 Title' data-image='photo/DSC07708.jpg' data-description='Image 25 Description'src='thumb/DSC07708.png'>
+			
+			
 			<img alt='Image 26 Title' data-image='photo/DSC07709.jpg' data-description='Image 26 Description'src='thumb/DSC07709.png'>
 			<img alt='Image 27 Title' data-image='photo/DSC07710.jpg' data-description='Image 27 Description'src='thumb/DSC07710.png'>
 			<img alt='Image 28 Title' data-image='photo/DSC07711.jpg' data-description='Image 28 Description'src='thumb/DSC07711.png'>
@@ -1478,6 +1335,115 @@
     	</div>
 	</div>
 </div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/easeljs-0.6.0.min.js"></script>
+<script src="js/tweenjs-0.4.0.min.js"></script>
+<script src="js/movieclip-0.6.0.min.js"></script>
+<script src="js/preloadjs-0.3.0.min.js"></script>
+<script src="js/rocketanimation.js"></script>
+<script src="js/unitegallery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/unite-gallery.css"/> 
+
+<script type="text/javascript" src="themes/default/ug-theme-default.js"></script> 
+<link rel="stylesheet" type="text/css"href="themes/default/ug-theme-default.css"/> 
+<script type="text/javascript" src="themes/compact/ug-theme-compact.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script>
+	"use strict";
+	var canvas, stage, exportRoot;
+
+	function init() {
+		canvas = document.getElementById("canvas");
+		images = images||{};
+
+		var manifest = [
+			{src:"img/cloud.png", id:"cloud"},
+			{src:"img/rocket.png", id:"rocket_1"}
+		];
+
+		var loader = new createjs.LoadQueue(false);
+		loader.addEventListener("fileload", handleFileLoad);
+		loader.addEventListener("complete", handleComplete);
+		loader.loadManifest(manifest);
+	}
+
+	function handleFileLoad(evt) {
+		if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+	}
+
+	function handleComplete() {
+		exportRoot = new lib.rocket();
+
+		stage = new createjs.Stage(canvas);
+		stage.addChild(exportRoot);
+		stage.update();
+
+		createjs.Ticker.setFPS(30);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+</script>
+
+<script type="text/javascript"> 	
+				jQuery(document).ready(function(){
+					
+					jQuery("#gallery").unitegallery({
+						gallery_theme: "compact",
+						//theme options
+						
+						theme_panel_position: "bottom",			//top, bottom, left, right - thumbs panel position
+						theme_hide_panel_under_width: 480,		//hide panel under certain browser width, if null, don't hide
+
+						// gallery options
+					
+						gallery_width:1200,							//gallery width		
+						gallery_height:700,							//gallery height
+		
+						//gallery_min_width: 400,						//gallery minimal width when resizing
+						//gallery_min_height: 300,					//gallery minimal height when resizing
+		
+						gallery_skin:"default",						//default, alexis etc... - the global skin of the gallery. Will change all gallery items by default.
+		
+						gallery_images_preload_type:"minimal",		//all , minimal , visible - preload type of the images.
+																	//minimal - only image nabours will be loaded each time.
+																	//visible - visible thumbs images will be loaded each time.
+																	//all - load all the images first time.
+		
+						gallery_autoplay:false,						//true / false - begin slideshow autoplay on start
+						gallery_play_interval: 3000,				//play interval of the slideshow
+						gallery_pause_on_mouseover: true,			//true,false - pause on mouseover when playing slideshow true/false
+		
+						gallery_control_thumbs_mousewheel:false,	//true,false - enable / disable the mousewheel
+						gallery_control_keyboard: true,				//true,false - enable / disble keyboard controls
+						gallery_carousel:true,						//true,false - next button on last image goes to first image.
+		
+						gallery_preserve_ratio: true,				//true, false - preserver ratio when on window resize
+						gallery_debug_errors:false,					//show error message when there is some error on the gallery area.
+						gallery_background_color: "",				//set custom background color. If not set it will be taken from css.
+						
+						slider_enable_fullscreen_button: true,
+						slider_scale_mode: "fit",
+						
+						strip_thumbs_align: "left",					//left, center, right, top, middle, bottom - the align of the thumbs when they smaller then the strip size.
+						strip_space_between_thumbs:6,				//space between thumbs
+						strip_thumb_touch_sensetivity:50,  			//from 1-100, 1 - most sensetive, 100 - most unsensetive
+						strip_scroll_to_thumb_duration:500,			//duration of scrolling to thumb
+						strip_scroll_to_thumb_easing:"easeOutCubic", //easing of scrolling to thumb animation
+						strip_control_avia:false,					//avia control - move the strip according strip moseover position
+						strip_control_touch:true,					//touch control - move the strip by dragging it
+						});
+				});		
+</script>
 
 </body>
 </html>
